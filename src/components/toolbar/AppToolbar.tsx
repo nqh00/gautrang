@@ -41,7 +41,7 @@ const AppToolbar: FC<AppToolbarProps> = ({
     const isBackButtonAvailable = appRouter.canGoBack();
 
     // Handles a specific case to hide the user menu on the select server page while authenticated
-    const isUserMenuAvailable = currentLocation.pathname !== '/selectserver.html';
+    const isUserMenuAvailable = currentLocation.pathname !== '/bonsoir.html';
 
     return (
         <Toolbar

@@ -1654,10 +1654,7 @@ button > .material-icons.home::before {
 }
 
 .mainDrawer {
-    border-top-right-radius: 3em;
-    border-bottom-right-radius: 3em;
-    margin: 1em 0;
-    padding: 1em 0 1em;
+    padding-top: 2em;
 }
 
 /* -------------------- CONTEXT MENU -------------------- */

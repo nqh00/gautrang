@@ -99,7 +99,7 @@ export function onServerChanged(_userId, _accessToken, apiClient) {
 export function logout() {
     ServerConnections.logout().then(function () {
         webSettings.getMultiServer().then(multi => {
-            multi ? navigate('selectserver.html') : navigate('login.html');
+            multi ? navigate('bonsoir.html') : navigate('login.html');
         });
     });
 }

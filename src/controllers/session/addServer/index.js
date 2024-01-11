@@ -19,7 +19,7 @@ function handleConnectionResult(page, result) {
             Dashboard.navigate('login.html?serverid=' + result.Servers[0].Id, false, 'none');
             break;
         case ConnectionState.ServerSelection:
-            Dashboard.navigate('selectserver.html', false, 'none');
+            Dashboard.navigate('bonsoir.html', false, 'none');
             break;
         case ConnectionState.ServerUpdateNeeded:
             Dashboard.alert({
@@ -36,7 +36,7 @@ function handleConnectionResult(page, result) {
 
 function submitServer(page) {
     loading.show();
-    const host = page.querySelector('#txtServerHost').value;
+    const host = page.querySelector('#txtServerHost').value.replace(/\/+$/, '');
     ServerConnections.connectToAddress(host, {
         enableAutoLogin: appSettings.enableAutoLogin()
     }).then(function(result) {

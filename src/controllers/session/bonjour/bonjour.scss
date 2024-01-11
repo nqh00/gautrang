@@ -36,3 +36,18 @@ img.bonjour {
     margin: 0 auto; 
     cursor: pointer;
 }
+
+summary {
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.layout-mobile .footer {
+    padding: 0;
+}
+
+.layout-mobile .footer-menu {
+    padding: 0;
+}
