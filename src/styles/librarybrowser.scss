@@ -87,7 +87,7 @@
 }
 
 .libraryPage {
-    padding-top: 7em !important;
+    padding-top: 9em !important;
 }
 
 .itemDetailPage {
@@ -104,10 +104,6 @@
 
 .wizardPage {
     padding-top: 7em !important;
-}
-
-.libraryPage:not(.noSecondaryNavPage) {
-    padding-top: 7.5em !important;
 }
 
 .absolutePageTabContent {
@@ -255,17 +251,11 @@
     text-decoration: none;
     color: inherit;
     flex-grow: 1;
-    font-weight: 400 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-
-    [dir="ltr"] & {
-        padding: 0.9em 0 0.9em 2.4em !important;
-    }
-
-    [dir="rtl"] & {
-        padding: 0.9em 2.4em 0.9em 0 !important;
-    }
+    font-weight: 700 !important;
+    margin: 1em !important;
+    border: 1px solid !important;
+    border-radius: 30px !important;
+    border-color: rgba(255,255,255,0.1) !important;
 }
 
 .navMenuOptionIcon {
@@ -392,15 +382,6 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        margin-top: -4.3em;
-    }
-
-    .libraryPage:not(.noSecondaryNavPage) {
-        padding-top: 4.6em !important;
-    }
-
-    .pageWithAbsoluteTabs:not(.noSecondaryNavPage) {
-        padding-top: 6.7em !important;
     }
 
     .absolutePageTabContent {
@@ -602,16 +583,6 @@
         }
     }
 
-    [dir="ltr"] & {
-        padding-left: 32.45vw;
-        padding-right: 2%;
-    }
-
-    [dir="rtl"] & {
-        padding-right: 32.45vw;
-        padding-left: 2%;
-    }
-
     .layout-mobile & {
         padding-left: 5%;
         padding-right: 5%;
@@ -639,6 +610,7 @@
 }
 
 .parentName {
+    text-align: center;
     display: block;
     margin: 0 0 0;
 }
@@ -664,7 +636,6 @@
 .itemName {
     margin: 0.5em 0;
     font-weight: 600;
-    white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 
@@ -739,29 +710,6 @@
     margin-bottom: 0.5em;
 }
 
-.layout-mobile [dir="ltr"] .mainDetailButtons {
-    margin-left: 0;
-
-    @include header-poster-padding;
-
-    // The buttons row is full width on small screens
-    @media all and (max-width: 32em) {
-        margin-bottom: 0;
-        padding-left: 0;
-    }
-}
-
-.layout-mobile [dir="rtl"] .mainDetailButtons {
-    margin-right: 0;
-
-    @include header-poster-padding-rtl;
-
-    @media all and (max-width: 32em) {
-        margin-bottom: 0;
-        padding-right: 0;
-    }
-}
-
 .subtitle {
     margin: 0.15em 0 0.2em;
 
@@ -794,16 +742,6 @@
     .layout-tv & {
         display: block;
     }
-
-    .layout-desktop [dir="rtl"] &,
-    .layout-tv [dir="rtl"] & {
-        padding-right: 32.45vw;
-    }
-
-    .layout-desktop [dir="ltr"] &,
-    .layout-tv [dir="ltr"] & {
-        padding-left: 32.45vw;
-    }
 }
 
 .layout-desktop .detailRibbon {
@@ -826,14 +764,6 @@
             position: relative;
         }
     }
-
-    .layout-mobile [dir="ltr"] & {
-        @include header-poster-padding;
-    }
-
-    .layout-mobile [dir="rtl"] & {
-        @include header-poster-padding-rtl;
-    }
 }
 
 .infoText {
@@ -852,11 +782,9 @@
 .detailImageContainer .card {
     // important is needed here to override :focus setting
     // the position to relative in the tv layout
-    position: absolute !important;
-    top: 20%;
-    max-width: 25vw;
-    max-height: 80vh;
-    z-index: 3;
+    width: 10em;
+    max-height: 20em;
+    margin: 0 auto;
 
     .cardBox {
         margin: 0;
@@ -874,7 +802,6 @@
         left: 5%;
         bottom: 1rem;
         max-width: 30vw;
-        filter: drop-shadow(0 0 0.5rem #000);
 
         @media all and (max-width: 32em) {
             left: 0;
@@ -888,13 +815,6 @@
         }
     }
 
-    .layout-desktop & {
-        left: 3.3%;
-        top: -80%;
-        width: 25vw;
-        // FIXME: the fixed width + max height cause the card to be cropped this needs a proper fix
-        max-height: none;
-    }
 
     .layout-tv & {
         left: 5%;
@@ -919,19 +839,6 @@
 
 .detailPagePrimaryContent {
     position: relative;
-}
-
-.layout-mobile,
-.layout-tv {
-    .detailLogo {
-        display: none;
-    }
-}
-
-@media all and (max-width: 68.75em) {
-    .detailLogo {
-        display: none;
-    }
 }
 
 .itemDetailImage {
@@ -1391,18 +1298,6 @@ div:not(.sectionTitleContainer-cards) > .sectionTitle-cards {
 .layout-tv .padded-bottom-focusscale {
     padding-bottom: 1.5em;
     margin-bottom: -1.5em;
-}
-
-@media all and (min-height: 31.25em) {
-    [dir="ltr"] .padded-right-withalphapicker {
-        padding-right: 7.5%;
-        padding-right: max(env(safe-area-inset-right), 7.5%);
-    }
-
-    [dir="rtl"] .padded-right-withalphapicker {
-        padding-left: 7.5%;
-        padding-left: max(env(safe-area-inset-left), 7.5%);
-    }
 }
 
 .searchfields-icon {

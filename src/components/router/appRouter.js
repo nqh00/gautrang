@@ -13,7 +13,7 @@ import { toApi } from 'utils/jellyfin-apiclient/compat';
 import { history } from 'RootAppRouter';
 
 /** Pages of "no return" (when "Go back" should behave differently, probably quitting the application). */
-const START_PAGE_PATHS = ['/home.html', '/login.html', '/selectserver.html'];
+const START_PAGE_PATHS = ['/home.html', '/login.html', '/bonsoir.html'];
 
 /** Pages that do not require a user to be logged in to view. */
 const PUBLIC_PATHS = [
@@ -473,7 +473,7 @@ class AppRouter {
     }
 
     showSelectServer() {
-        return this.show('selectserver.html');
+        return this.show('bonsoir.html');
     }
 
     showSettings() {

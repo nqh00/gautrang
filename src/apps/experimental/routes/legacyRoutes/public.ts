@@ -2,6 +2,34 @@ import { LegacyRoute } from '../../../../components/router/LegacyRoute';
 
 export const LEGACY_PUBLIC_ROUTES: LegacyRoute[] = [
     {
+        path: 'bonjour.html',
+        pageProps: {
+            controller: 'session/bonjour/index',
+            view: 'session/bonjour/index.html'
+        }
+    },
+    {
+        path: 'about-us.html',
+        pageProps: {
+            controller: 'session/bonjour/index',
+            view: '../about-us.html'
+        }
+    },
+    {
+        path: 'policy.html',
+        pageProps: {
+            controller: 'session/bonjour/index',
+            view: '../policy.html'
+        }
+    },
+    {
+        path: 'dmca.html',
+        pageProps: {
+            controller: 'session/bonjour/index',
+            view: '../dmca.html'
+        }
+    },
+    {
         path: 'addserver.html',
         pageProps: {
             controller: 'session/addServer/index',
@@ -9,7 +37,7 @@ export const LEGACY_PUBLIC_ROUTES: LegacyRoute[] = [
         }
     },
     {
-        path: 'selectserver.html',
+        path: 'bonsoir.html',
         pageProps: {
             controller: 'session/selectServer/index',
             view: 'session/selectServer/index.html'

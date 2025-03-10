@@ -2,13 +2,6 @@
     position: relative;
 }
 
-.emby-scroller {
-    padding-left: 3.3%;
-    padding-left: max(env(safe-area-inset-left), 3.3%);
-    padding-right: 3.3%;
-    padding-right: max(env(safe-area-inset-right), 3.3%);
-}
-
 .servers > .card > .cardBox {
     margin-left: 0.6em;
     margin-right: 0.6em;

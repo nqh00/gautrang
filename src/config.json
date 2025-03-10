@@ -29,8 +29,34 @@
       "color": "#0c2450"
     }
   ],
-  "menuLinks": [],
-  "servers": [],
+  "menuLinks": [
+    {
+      "name": "Windows / Mac / Linux",
+      "icon": "desktop_mac",
+      "url": "https://github.com/jellyfin/jellyfin-media-player/releases"
+    },
+    {
+      "name": "iOS",
+      "icon": "apple",
+      "url": "https://apps.apple.com/app/id1604098728"
+    },
+    {
+      "name": "Android",
+      "icon": "android",
+      "url": "https://play.google.com/store/apps/details?id=dev.jdtech.jellyfin"
+    },
+    {
+      "name": "Apple TV",
+      "icon": "live_tv",
+      "url": "https://apps.apple.com/app/id1136220934"
+    },
+    {
+      "name": "Android TV",
+      "icon": "live_tv",
+      "url": "https://play.google.com/store/apps/details?id=org.jellyfin.androidtv"
+    }
+  ],
+  "servers": ["https://9.lw.itsby.design/gnartuag/jellyfin"],
   "plugins": [
     "playAccessValidation/plugin",
     "experimentalWarnings/plugin",

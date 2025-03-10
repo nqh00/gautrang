@@ -17,14 +17,6 @@
     outline: none !important;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 100%;
-
-    [dir="ltr"] & {
-        padding: 0.5em 1.9em 0.5em 0.5em;
-    }
-
-    [dir="rtl"] & {
-        padding: 0.5em 0.5em 0.5em 1.9em;
-    }
 }
 
 .emby-select[disabled] {
