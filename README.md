@@ -86,6 +86,10 @@ In this setup, the application will inherit <i>Client-Server</i> architecture. T
    
 <h3 align="left">Directory Structure</h3>
 
+> [!NOTE]
+> We are in the process of refactoring to a [new structure](https://forum.jellyfin.org/t-proposed-update-to-the-structure-of-jellyfin-web) based on [Bulletproof React](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md) architecture guidelines.
+> Most new code should be organized under the appropriate app directory unless it is common/shared.
+
 ```
 .
 └── src
@@ -95,19 +99,24 @@ In this setup, the application will inherit <i>Client-Server</i> architecture. T
     │   └── stable        # Classic (stable) app layout and routes
     ├── assets            # Static assets
     ├── components        # Higher order visual components and React components
-    ├── controllers       # Legacy page views and controllers 🧹
-    ├── elements          # Basic webcomponents and React wrappers 🧹
+    ├── constants         # Common constant values
+    ├── controllers       # Legacy page views and controllers 🧹 ❌
+    ├── elements          # Basic webcomponents and React equivalents 🧹
     ├── hooks             # Custom React hooks
-    ├── legacy            # Polyfills for legacy browsers
-    ├── libraries         # Third party libraries 🧹
+    ├── lib               # Reusable libraries
+    │   ├── globalize     # Custom localization library
+    │   ├── legacy        # Polyfills for legacy browsers
+    │   ├── navdrawer     # Navigation drawer library for classic layout
+    │   └── scroller      # Content scrolling library
     ├── plugins           # Client plugins
-    ├── scripts           # Random assortment of visual components and utilities 🐉
-    ├── strings           # Translation files
+    ├── scripts           # Random assortment of visual components and utilities 🐉 ❌
+    ├── strings           # Translation files (only commit changes to en-us.json)
     ├── styles            # Common app Sass stylesheets
     ├── themes            # CSS themes
     ├── types             # Common TypeScript interfaces/types
     └── utils             # Utility functions
 ```
 
+- ❌ &mdash; Deprecated, do **not** create new files here
 - 🧹 &mdash; Needs cleanup
 - 🐉 &mdash; Serious mess (Here be dragons)
