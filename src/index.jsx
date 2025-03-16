@@ -138,6 +138,7 @@ function loadFonts() {
         console.debug('using default fonts');
         import('./styles/fonts.scss');
         import('./styles/fonts.noto.scss');
+        import('./styles/fonts.netflix.scss');
     }
 }
 

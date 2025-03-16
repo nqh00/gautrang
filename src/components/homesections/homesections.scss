@@ -20,3 +20,102 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
+.swiper {
+    border-radius: 30px;
+    width: 95vw;
+    height: 35vw;
+    max-height: 700px;
+    margin-left: 2.5vw;
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff9;
+}
+
+.swiper-left {
+    position: absolute;
+    width: 25vw;
+    background-color: #101010;
+    height: 100vh;
+    padding-top: 15em;
+    z-index: 2;
+}
+
+.swiper-right {
+    position: absolute;
+    width: 70vw;
+    right: 0;
+    background-color: #101010;
+    z-index: 1;
+}
+
+.swiper-backdrop {
+    mask-image: linear-gradient(to right, #0000, #000);
+    width: 70vw;
+}
+
+.swiper-logo {
+    display: block;
+    max-width: 40vw;
+    max-height: 150px;
+    margin: 0 auto;
+    padding-left: 5vw;
+}
+
+.swiper-content {
+    width: 25vw;
+    display: block;
+    font-family: "Netflix Sans", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+    padding-left: 5vw;
+}
+
+// For screen width from 1280px to 1600px
+@media all and (max-width: 80em) {
+    .swiper-left {
+        padding-top: 10em;
+    }
+}
+
+// For screen width from 960px to 1280px
+@media all and (max-width: 60em) {
+    .swiper-left {
+        padding-top: 5em;
+    }
+}
+
+// For screen width from 640px to 960px
+@media all and (max-width: 40em) {
+    .swiper-left {
+        padding-top: 3em;
+    }
+}
+
+// For screen width smaller than 480px
+@media all and (max-width: 30em) {
+    .swiper {
+        height: 20em;
+    }
+
+    .swiper-left {
+        width: 10vw;
+        padding-top: 5em;
+    }
+
+    .swiper-right {
+        width: 90vw;
+    }
+
+    .swiper-backdrop {
+        height: 20em;
+        width: auto;
+    }
+
+    .swiper-content {
+        width: 40vw;
+        text-align: justify;
+    }
+}

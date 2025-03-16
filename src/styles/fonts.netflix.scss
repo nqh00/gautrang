@@ -1,0 +1,33 @@
+@import "../styles/netflix-sans/index.scss";
+ 
+body,
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Netflix Sans", sans-serif;
+}
+
+.videoSubtitles {
+    font-family: "Netflix Sans", sans-serif;
+    font-weight: 700;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
+
+video::-webkit-media-text-track-display {
+    font-family: "Netflix Sans", sans-serif;
+    font-weight: 700;
+    text-shadow: rgba(0, 0, 0, 1) 0em 0em 0.2em;
+}
+
+video::-webkit-media-text-track-container {
+    font-family: "Netflix Sans", sans-serif;
+    font-weight: 700;
+    text-shadow: rgba(0, 0, 0, 1) 0em 0em 0.2em;
+}
+
+video:cue {
+    font-family: "Netflix Sans", sans-serif;
+    font-weight: 700;
+    text-shadow: rgba(0, 0, 0, 1) 0em 0em 0.2em;
+}

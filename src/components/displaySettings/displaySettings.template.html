@@ -78,12 +78,6 @@
             <option value="zh-TW">漢語 (繁体字)</option>
             <option value="zh-HK">廣東話 (香港)</option>
         </select>
-        <div class="fieldDescription">
-            <div>${LabelDisplayLanguageHelp}</div>
-            <div class="learnHowToContributeContainer hide" style="margin-top: .25em;">
-                <a is="emby-linkbutton" rel="noopener noreferrer" class="button-link" href="https://github.com/jellyfin/jellyfin" target="_blank">${LearnHowYouCanContribute}</a>
-            </div>
-        </div>
     </div>
 
     <div class="selectContainer fldDateTimeLocale hide">
@@ -178,11 +172,11 @@
         <div class="fieldDescription">${LabelPleaseRestart}</div>
     </div>
 
-    <div class="selectContainer">
+    <div class="selectContainer hide">
         <select id="selectTheme" is="emby-select" label="${LabelTheme}"></select>
     </div>
 
-    <div class="checkboxContainer checkboxContainer-withDescription">
+    <div class="checkboxContainer checkboxContainer-withDescription hide">
         <label>
             <input type="checkbox" is="emby-checkbox" id="chkDisableCustomCss" />
             <span>${DisableCustomCss}</span>

@@ -1,0 +1,48 @@
+h2 {
+    font-weight: bold;
+}
+
+.about-us,
+.policy,
+.dmca {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3em;
+    text-align: justify;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.copy-right {
+    color: #00A4DC;
+}
+
+ul.footer-menu {
+    list-style: none;
+    line-height: 2.2;
+    padding-left: 0;
+}
+
+.footer-menu li {
+    float: left;
+    line-height: 40px;
+    margin: 0 1em;
+}
+
+img.bonjour {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+summary {
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 2rem 0;
+}

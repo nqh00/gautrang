@@ -214,6 +214,7 @@ export default function (view, params) {
         });
     }
 
+    document.querySelector('.skinHeader').classList.add('hide');
     view.querySelector('#divUsers').addEventListener('click', function (e) {
         const card = dom.parentWithClass(e.target, 'card');
         const cardContent = card ? card.querySelector('.cardContent') : null;
@@ -262,9 +263,7 @@ export default function (view, params) {
         loading.show();
         libraryMenu.setTransparentMenu(true);
 
-        if (!appHost.supports('multiserver')) {
-            view.querySelector('.btnSelectServer').classList.add('hide');
-        }
+        view.querySelector('.btnSelectServer').classList.add('hide');
 
         const apiClient = getApiClient();
 

@@ -133,7 +133,7 @@ export default function () {
                 elem.classList.add('logoScreenSaver');
                 document.body.appendChild(elem);
 
-                elem.innerHTML = '<img class="logoScreenSaverImage" src="assets/img/banner-light.png" />';
+                elem.innerHTML = '<img class="logoScreenSaverImage" src="assets/img/banner.png" />';
             }
 
             stopInterval();

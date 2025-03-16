@@ -37,9 +37,9 @@ function renderHeader() {
     html += '<div class="flex align-items-center flex-grow headerTop">';
     html += '<div class="headerLeft">';
     html += '<button type="button" is="paper-icon-button-light" class="headerButton headerButtonLeft headerBackButton hide"><span class="material-icons ' + (browser.safari ? 'chevron_left' : 'arrow_back') + '" aria-hidden="true"></span></button>';
-    html += '<button type="button" is="paper-icon-button-light" class="headerButton headerHomeButton hide barsMenuButton headerButtonLeft"><span class="material-icons home" aria-hidden="true"></span></button>';
     html += '<button type="button" is="paper-icon-button-light" class="headerButton mainDrawerButton barsMenuButton headerButtonLeft hide"><span class="material-icons menu" aria-hidden="true"></span></button>';
     html += '<h3 class="pageTitle" aria-hidden="true"></h3>';
+    html += '<button type="button" is="paper-icon-button-light" class="headerButton headerHomeButton hide barsMenuButton headerButtonLeft" style="position:relative;margin:0 auto;border-radius: 50% !important;padding:1px"><span class="material-icons home" aria-hidden="true"></span></button>';
     html += '</div>';
     html += '<div class="headerRight">';
     html += '<button is="paper-icon-button-light" class="headerSyncButton syncButton headerButton headerButtonRight hide"><span class="material-icons groups" aria-hidden="true"></span></button>';
@@ -156,23 +156,7 @@ function updateUserInHeader(user) {
         if (headerSearchButton) {
             headerSearchButton.classList.remove('hide');
         }
-
-        if (!layoutManager.tv) {
-            headerCastButton.classList.remove('hide');
-        }
-
         const policy = user.Policy ? user.Policy : user.localUser.Policy;
-
-        if (
-        // Button is present
-            headerSyncButton
-                // SyncPlay plugin is loaded
-                && pluginManager.ofType(PluginType.SyncPlay).length > 0
-                // SyncPlay enabled for user
-                && policy?.SyncPlayAccess !== 'None'
-        ) {
-            headerSyncButton.classList.remove('hide');
-        }
     } else {
         headerHomeButton.classList.add('hide');
         headerCastButton.classList.add('hide');
@@ -321,9 +305,6 @@ function refreshLibraryInfoInDrawer(user) {
     html += '<div style="height:.5em;"></div>';
     html += `<a is="emby-linkbutton" class="navMenuOption lnkMediaFolder" href="#/home.html"><span class="material-icons navMenuOptionIcon home" aria-hidden="true"></span><span class="navMenuOptionText">${globalize.translate('Home')}</span></a>`;
 
-    // placeholder for custom menu links
-    html += '<div class="customMenuOptions"></div>';
-
     // libraries are added here
     html += '<div class="libraryMenuOptions"></div>';
 
@@ -337,15 +318,15 @@ function refreshLibraryInfoInDrawer(user) {
         html += '</div>';
     }
 
+    // placeholder for custom menu links
+    html += '<h3 class="sidebarHeader">Download app</h3>';
+    html += '<div class="customMenuOptions"></div>';
+   
     if (user.localUser) {
         html += '<div class="userMenuOptions">';
         html += '<h3 class="sidebarHeader">';
         html += globalize.translate('HeaderUser');
         html += '</h3>';
-
-        if (appHost.supports('multiserver')) {
-            html += `<a is="emby-linkbutton" class="navMenuOption lnkMediaFolder btnSelectServer" data-itemid="selectserver" href="#"><span class="material-icons navMenuOptionIcon storage" aria-hidden="true"></span><span class="navMenuOptionText">${globalize.translate('SelectServer')}</span></a>`;
-        }
 
         html += `<a is="emby-linkbutton" class="navMenuOption lnkMediaFolder btnSettings" data-itemid="settings" href="#"><span class="material-icons navMenuOptionIcon settings" aria-hidden="true"></span><span class="navMenuOptionText">${globalize.translate('Settings')}</span></a>`;
         html += `<a is="emby-linkbutton" class="navMenuOption lnkMediaFolder btnLogout" data-itemid="logout" href="#"><span class="material-icons navMenuOptionIcon exit_to_app" aria-hidden="true"></span><span class="navMenuOptionText">${globalize.translate('ButtonSignOut')}</span></a>`;
@@ -725,7 +706,7 @@ function setDefaultTitle () {
         pageTitleElement.innerHTML = '';
     }
 
-    document.title = 'Jellyfin';
+    document.title = 'Bonjour';
 }
 
 function setTitle (title) {
@@ -751,7 +732,7 @@ function setTitle (title) {
         pageTitleElement.innerText = html || '';
     }
 
-    document.title = title || 'Jellyfin';
+    document.title = title || 'Bonjour';
 }
 
 function setTransparentMenu (transparent) {
@@ -774,6 +755,10 @@ pageClassOn('pageshow', 'page', function (e) {
     const isDashboardPage = page.classList.contains('type-interior');
     const isHomePage = page.classList.contains('homePage');
     const isLibraryPage = !isDashboardPage && page.classList.contains('libraryPage');
+
+    if (isHomePage) {
+        skinHeader.classList.remove('hide');
+    }
 
     if (!isDashboardPage) {
         if (mainDrawerButton) {

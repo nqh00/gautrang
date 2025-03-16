@@ -40,9 +40,6 @@ export default function (view, params) {
         const supportsExitMenu = appHost.supports('exitmenu');
         page.querySelector('.exitApp').classList.toggle('hide', !supportsExitMenu);
 
-        const supportsMultiServer = appHost.supports('multiserver');
-        page.querySelector('.selectServer').classList.toggle('hide', !supportsMultiServer);
-
         page.querySelector('.lnkControlsPreferences').classList.toggle('hide', layoutManager.mobile);
 
         ApiClient.getQuickConnect('Enabled')

@@ -80,12 +80,6 @@ function loadForm(context, user, userSettings) {
         context.querySelector('.fldDisplayMode').classList.add('hide');
     }
 
-    if (appHost.supports('externallinks')) {
-        context.querySelector('.learnHowToContributeContainer').classList.remove('hide');
-    } else {
-        context.querySelector('.learnHowToContributeContainer').classList.add('hide');
-    }
-
     context.querySelector('.selectDashboardThemeContainer').classList.toggle('hide', !user.Policy.IsAdministrator);
 
     if (appHost.supports('screensaver')) {
