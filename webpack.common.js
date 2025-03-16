@@ -82,8 +82,16 @@ const config = {
                     from: 'dmca.html',
                 },
                 {
-                    from: 'themes/',
-                    to: 'themes/'
+                    from: 'about-us.html',
+                },
+                {
+                    from: 'policy.html',
+                },
+                {
+                    from: 'dmca.html',
+                },
+                {
+                    from: 'themes/**/*.{css,jpg}'
                 },
                 {
                     from: 'assets/**',
@@ -96,7 +104,13 @@ const config = {
                     from: '*.*',
                     globOptions: {
                         dot: true,
-                        ignore: ['**.js', '**.html']
+                        ignore: [
+                            '**.js',
+                            '**.jsx',
+                            '**.html',
+                            '**.ts',
+                            '**.tsx'
+                        ]
                     }
                 }
             ]
@@ -347,7 +361,9 @@ const config = {
 };
 
 if (!DEV_MODE) {
-    config.plugins.push(new MiniCssExtractPlugin());
+    config.plugins.push(new MiniCssExtractPlugin({
+        filename: '[name].[contenthash].css'
+    }));
 }
 
 module.exports = config;
