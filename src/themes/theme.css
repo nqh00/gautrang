@@ -536,7 +536,7 @@ html {
     --activeColor: rgb(119, 91, 244);
     --tableBodyColor: rgb(31 41 55 / 1);
     --uiAccentColor: rgb(117 111 226);
-    --btnMiniPlayColor: rgb(41 154 93);
+    --btnMiniPlayColor: rgba(0, 0, 0, .3);
     --btnPlayBorderColor: color-mix(in srgb, var(--btnMiniPlayColor), rgb(255, 255, 255) 5%);
     --backgroundGradient: linear-gradient(0deg, var(--darkerGradientPoint) 35%, var(--lighterGradientPoint));
     --cardBackgroundGradient: linear-gradient(0deg, var(--darkerGradientPoint), var(--lighterGradientPoint) 25%);
@@ -656,7 +656,7 @@ html {
 .countIndicator,
 .fullSyncIndicator,
 .mediaSourceIndicator {
-    background: rgb(31, 80, 189);
+    background: rgba(0, 0, 0, .5);
     border: var(--defaultLighterBorder);
 }
 
@@ -887,6 +887,8 @@ html {
     .layout-mobile .portraitCard,
     .layout-mobile .squareCard {
         width: 29.8% !important;
+        filter: none !important;
+        -webkit-filter: none !important;
     }
 
     .backdropCard {
@@ -1714,7 +1716,7 @@ div[data-isfolder="true"] .cardText-first+.itemSelectionPanel>.checkboxContainer
 
 .indicator {
     border: solid rgb(124 124 124 / 50%) var(--borderWidth);
-    border-radius: 100em;
+    border-radius: 20%;
 }
 
 .playedIndicator {
@@ -2604,20 +2606,6 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     width: 80em;
 }
 
-@media (max-width: 640px) {
-    #loginPage .padded-left.padded-right.padded-bottom-page {
-        width: 100%;
-        margin: 2em;
-    }
-}
-
-@media (max-width: 1300px) {
-    #loginPage .padded-left.padded-right.padded-bottom-page:has(.visualLoginForm:not(.hide)) {
-        width: 100%;
-        margin: 2em;
-    }
-}
-
 #loginPage {
     display: flex;
     flex-direction: column;
@@ -2875,7 +2863,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 
 :root{
     /* my media library default covers customizations */
-    --colorOverlayCover: rgba(0, 0, 0, 0.2);
+    --colorOverlayCover: rgba(0, 0, 0, .2);
     --colorOverlayMoviesCover: rgb(193, 103, 104);
     --colorOverlayTvshowsCover: rgb(140, 149, 43);
     --colorOverlayLivetvCover: rgb(17, 98, 159);
@@ -2886,6 +2874,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     --colorOverlayBooksCover: rgb(166, 68, 70);
     --colorOverlayFoldersCover: rgb(173, 60, 113);
     --urlMoviesCover: url(../assets/img/movies.png);
+    --urlAnimeCover: url(../assets/img/anime.png);
     --urlTvshowsCover: url(../assets/img/tvshows.png);
     --urlLivetvCover: url(../assets/img/livetv.png);
     --urlPlaylistsCover: url(../assets/img/playlists.png);
@@ -2901,53 +2890,58 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 } 
 
 
-div[data-collectiontype="movies"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+div[data-collectiontype="movies"][data-path*="Movies"] .cardImageContainer.cardContent {
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlMoviesCover) !important;
 }
 
-div[data-collectiontype="tvshows"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+div[data-collectiontype="tvshows"][data-path*="TV Shows"] .cardImageContainer.cardContent {
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlTvshowsCover) !important;
 }
 
+div[data-collectiontype="tvshows"][data-path*="Anime"] .cardImageContainer.cardContent {
+    background-color: var(--colorOverlayCover) !important;
+    background-image: var(--urlAnimeCover) !important;
+}
+
 div[data-collectiontype="livetv"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlLivetvCover) !important;
 }
 
-div[data-collectiontype="music"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+div[data-collectiontype="music"][data-path*="Music"] .cardImageContainer.cardContent {
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlMusicCover) !important;
 }
 
 div[data-collectiontype="homevideos"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlHomevideosCover) !important;
 }
 
-div[data-collectiontype="books"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+div[data-collectiontype="books"][data-path*="Books"] .cardImageContainer.cardContent {
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlBooksCover) !important;
 }
 
 div[data-collectiontype="boxsets"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlBoxsetsCover) !important;
 }
 
 div[data-collectiontype="folders"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlFoldersCover) !important;
 }
 
 div[data-collectiontype="playlists"] .cardImageContainer.cardContent {
-    background: var(--colorOverlayCover) !important;
+    background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlPlaylistsCover) !important;
 }
 
 .card-withuserdata[data-isfolder="true"] .cardImageContainer.cardContent {
-    filter: contrast(0.85);
+    filter: contrast(.85);
     background-size: cover !important;
     background-position: 50% !important;
     background-blend-mode: multiply;

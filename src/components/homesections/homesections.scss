@@ -97,11 +97,11 @@
 // For screen width smaller than 480px
 @media all and (max-width: 30em) {
     .swiper {
-        height: 20em;
+        height: 15em;
     }
 
     .swiper-left {
-        width: 10vw;
+        width: 6vw;
         padding-top: 5em;
     }
 
@@ -110,8 +110,8 @@
     }
 
     .swiper-backdrop {
-        height: 20em;
-        width: auto;
+        height: 15em;
+        width: 100%;
     }
 
     .swiper-content {
