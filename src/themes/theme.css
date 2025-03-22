@@ -512,7 +512,7 @@ html {
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --elegantFinFooterText: "ElegantFin Nightly";
+    --elegantFinFooterText: "";
     color-scheme: dark;
     --darkerGradientPoint: #111827;
     --darkerGradientPointAlpha: rgba(17, 24, 39, 0.85);
@@ -2606,6 +2606,20 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     width: 80em;
 }
 
+@media (max-width: 640px) {
+    #loginPage .padded-left.padded-right.padded-bottom-page {
+        width: 87%;
+        margin: 2em;
+    }
+}
+
+@media (max-width: 1300px) {
+    #loginPage .padded-left.padded-right.padded-bottom-page:has(.visualLoginForm:not(.hide)) {
+        width: 100%;
+        margin: 2em;
+    }
+}
+
 #loginPage {
     display: flex;
     flex-direction: column;
@@ -2613,7 +2627,6 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     align-items: flex-start;
     min-height: 100vh;
     padding: 0;
-    overflow-y: auto;
     background:
         var(--loginPageBgUrl, linear-gradient(to bottom, var(--darkerGradientPointAlpha), var(--lighterGradientPoint)));
     background-size: cover;
