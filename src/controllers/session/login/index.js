@@ -309,5 +309,15 @@ export default function (view, params) {
     view.addEventListener('viewhide', function () {
         libraryMenu.setTransparentMenu(false);
     });
+
+    view.querySelectorAll('a[href]').forEach(elem => {
+        elem.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
 }
 
