@@ -313,6 +313,10 @@ export default function (view, params) {
     view.querySelectorAll('a[href]').forEach(elem => {
         elem.addEventListener('click', function (e) {
             e.preventDefault();
+            const bonjour = view.querySelector('.bonjour');
+            bonjour.style.display = 'block';
+            void bonjour.offsetWidth;
+            bonjour.classList.add('visible');
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
