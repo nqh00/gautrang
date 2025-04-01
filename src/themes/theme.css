@@ -575,7 +575,7 @@ html {
     font-family: 'Material Icons Round';
     font-style: normal;
     font-weight: 100 700;
-    src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v222/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2) format('woff2');
+    src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v230/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2) format('woff2');
 }
 
 .material-icons {
@@ -943,6 +943,13 @@ html {
     display: none;
 }
 
+/* hide sync button on home screen on phones only in portrait mode */
+@media (orientation: portrait) {
+    .layout-mobile .skinHeader.noHomeButtonHeader .headerSyncButton {
+        display: none;
+    }
+}
+
 .pageTitle {
     height: 1.5em;
 }
@@ -1024,6 +1031,10 @@ html {
     width: 23vw !important;
 }
 
+.layout-tv .detailImageContainer .card {
+    width: 23vw !important;
+}
+
 @media (max-width: 62.5em) {
     .layout-desktop .itemBackdrop {
         height: 7em !important;
@@ -1036,11 +1047,12 @@ html {
 
 @media (max-width: 50em) {
     .homeLibraryButton {
-        width: 45% !important;
+        width: 45.6% !important;
     }
 }
 
 .homeLibraryButton {
+    padding-inline-start: .25em;
     min-width: 15%;
 }
 
@@ -1189,6 +1201,10 @@ html {
 
 .buttonActive {
     color: var(--uiAccentColor) !important;
+}
+
+#divRunningTasks progress {
+    width: 86%;
 }
 
 .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
@@ -1821,13 +1837,15 @@ div[data-role=controlgroup] a.ui-btn-active {
     color: #fff !important;
 }
 
-.guide-date-tab-button.emby-tab-button-active, .guide-date-tab-button:focus {
+.guide-date-tab-button.emby-tab-button-active,
+.guide-date-tab-button:focus {
     color: white;
 }
 
 #btnDeleteImage,
 .button-delete,
-.btnRevoke  {
+.btnRevoke,
+#btnShutdown {
     background: var(--btnDeleteColor);
     border: solid var(--btnDeleteBorderColor) var(--borderWidth);
 }
@@ -1860,9 +1878,15 @@ div[data-role=controlgroup] a.ui-btn-active {
     padding: 1em;
 }
 
+.serverInfo>:nth-child(1n) {
+    -webkit-flex: 1 0 30%;
+    flex: 1 0 30%;
+}
+
 .serverInfo>:nth-child(2n) {
-    -webkit-flex: 1 0 60%;
-    flex: 1 0 60%;
+    -webkit-flex: 1 0 50%;
+    flex: 1 0 50%;
+    text-align: end;
 }
 
 .listItemIcon:not(.listItemIcon-transparent) {
@@ -2434,7 +2458,7 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 #liveTvSuggestedPage,
-.liveTvContainer{
+.liveTvContainer {
     background-color: var(--tableBodyColor);
 }
 
@@ -2444,12 +2468,21 @@ div[data-role=controlgroup] a.ui-btn-active {
     margin-block: .5em !important;
 }
 
-.guideVerticalScroller{
+.guideVerticalScroller {
     padding: 0;
 }
 
 .programGrid {
     background-color: var(--lighterGradientPointAlpha);
+}
+
+.channelPrograms>.programCell:nth-child(odd) {
+    background-color: var(--darkerGradientPoint);
+}
+
+.guide-channelHeaderCell:focus,
+.programCell:focus {
+    background-color: var(--highlightOutlineColor) !important;
 }
 
 .emby-select-iconbutton {
@@ -2513,7 +2546,7 @@ table:not(.MuiTable-root.MuiTable-stickyHeader) {
     overflow: hidden;
 }
 
-.detailTableHeaderCell{
+.detailTableHeaderCell {
     vertical-align: middle;
 }
 
@@ -2524,7 +2557,7 @@ table:not(.MuiTable-root.MuiTable-stickyHeader) {
 
 #serverActivityPage .MuiPaper-elevation2,
 #serverActivityPage .MuiPaper-elevation2>.MuiBox-root,
-#serverActivityPage .MuiTableRow-root.MuiTableRow-head{
+#serverActivityPage .MuiTableRow-root.MuiTableRow-head {
     background-color: var(--tableBodyColor);
 }
 
@@ -2852,12 +2885,12 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     min-width: 72px;
 }
 
-.MuiTabs-flexContainer>.MuiButtonBase-root.Mui-selected{
+.MuiTabs-flexContainer>.MuiButtonBase-root.Mui-selected {
     color: white;
     background-color: transparent !important;
 }
 
-.MuiToggleButtonGroup-grouped.Mui-selected{
+.MuiToggleButtonGroup-grouped.Mui-selected {
     color: white;
 }
 
@@ -2866,7 +2899,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     background-color: transparent;
 }
 
-#viewPanel .ui-panel-inner{
+#viewPanel .ui-panel-inner {
     margin-top: 4em;
 }
 

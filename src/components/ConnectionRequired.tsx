@@ -11,7 +11,7 @@ import { ConnectionState } from '../utils/jellyfin-apiclient/ConnectionState';
 enum BounceRoutes {
     Home = '/home.html',
     Login = '/login.html',
-    SelectServer = '/selectserver.html',
+    SelectServer = '/aurevoir.html',
     StartWizard = '/wizardstart.html'
 }
 
