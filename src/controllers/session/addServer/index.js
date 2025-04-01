@@ -19,7 +19,7 @@ function handleConnectionResult(page, result) {
             Dashboard.navigate('login.html?serverid=' + result.Servers[0].Id, false, 'none');
             break;
         case ConnectionState.ServerSelection:
-            Dashboard.navigate('selectserver.html', false, 'none');
+            Dashboard.navigate('aurevoir.html', false, 'none');
             break;
         case ConnectionState.ServerUpdateNeeded:
             Dashboard.alert({

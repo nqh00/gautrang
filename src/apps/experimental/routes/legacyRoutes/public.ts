@@ -9,7 +9,7 @@ export const LEGACY_PUBLIC_ROUTES: LegacyRoute[] = [
         }
     },
     {
-        path: 'selectserver.html',
+        path: 'aurevoir.html',
         pageProps: {
             controller: 'session/selectServer/index',
             view: 'session/selectServer/index.html'
