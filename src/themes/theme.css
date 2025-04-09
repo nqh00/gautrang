@@ -2937,57 +2937,57 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 } 
 
 
-div[data-path*="Movies"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-path*="Movies"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlMoviesCover) !important;
 }
 
-div[data-path*="TV Shows"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-path*="TV Shows"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlTvshowsCover) !important;
 }
 
-div[data-path*="Anime"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-path*="Anime"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlAnimeCover) !important;
 }
 
-div[data-path*="livetv"] .cardImageContainer.cardContent {
+div[data-type="UserView"][data-path*="livetv"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlLivetvCover) !important;
 }
 
-div[data-path*="Recordings"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-path*="Recordings"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlRecordingsCover) !important;
 }
 
-div[data-path*="Music"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-path*="Music"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlMusicCover) !important;
 }
 
-div[data-path*="homevideos"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-path*="homevideos"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlHomevideosCover) !important;
 }
 
-div[data-path*="Books"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-path*="Books"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlBooksCover) !important;
 }
 
-div[data-collectiontype="boxsets"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-collectiontype="boxsets"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlBoxsetsCover) !important;
 }
 
-div[data-collectiontype="folders"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-collectiontype="folders"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlFoldersCover) !important;
 }
 
-div[data-collectiontype="playlists"] .cardImageContainer.cardContent {
+div[data-type="CollectionFolder"][data-collectiontype="playlists"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlPlaylistsCover) !important;
 }
