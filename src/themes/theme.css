@@ -2929,6 +2929,7 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
     --urlHomevideosCover: url(../assets/img/homevideos.png);
     --urlBooksCover: url(../assets/img/books.png);
     --urlFoldersCover: url(../assets/img/folders.png);
+    --urlRecordingsCover: url(../assets/img/recordings.png);
 }
 
 .card-withuserdata[data-isfolder="true"]:not([data-type="PhotoAlbum"],[data-type="Series"],[data-type="Folder"]) .cardImageIcon.material-icons:not(.quiz)::before{
@@ -2936,37 +2937,42 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 } 
 
 
-div[data-collectiontype="movies"][data-path*="Movies"] .cardImageContainer.cardContent {
+div[data-path*="Movies"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlMoviesCover) !important;
 }
 
-div[data-collectiontype="tvshows"][data-path*="TV Shows"] .cardImageContainer.cardContent {
+div[data-path*="TV Shows"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlTvshowsCover) !important;
 }
 
-div[data-collectiontype="tvshows"][data-path*="Anime"] .cardImageContainer.cardContent {
+div[data-path*="Anime"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlAnimeCover) !important;
 }
 
-div[data-collectiontype="livetv"] .cardImageContainer.cardContent {
+div[data-path*="livetv"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlLivetvCover) !important;
 }
 
-div[data-collectiontype="music"][data-path*="Music"] .cardImageContainer.cardContent {
+div[data-path*="Recordings"] .cardImageContainer.cardContent {
+    background-color: var(--colorOverlayCover) !important;
+    background-image: var(--urlRecordingsCover) !important;
+}
+
+div[data-path*="Music"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlMusicCover) !important;
 }
 
-div[data-collectiontype="homevideos"] .cardImageContainer.cardContent {
+div[data-path*="homevideos"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlHomevideosCover) !important;
 }
 
-div[data-collectiontype="books"][data-path*="Books"] .cardImageContainer.cardContent {
+div[data-path*="Books"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlBooksCover) !important;
 }
