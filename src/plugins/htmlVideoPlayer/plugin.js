@@ -1661,6 +1661,7 @@ export class HtmlVideoPlayer {
                 }
 
                 html += '</video>';
+                html += '<div class="watermark-overlay"></div>';
 
                 playerDlg.innerHTML = html;
                 const videoElement = playerDlg.querySelector('video');

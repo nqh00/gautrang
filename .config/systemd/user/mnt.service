@@ -1,6 +1,5 @@
 [Unit]
-Description=rclone VFS service
-Wants=network-online.target
+Description=RCLONE VFS SERVICE
 After=network-online.target
 
 [Service]
@@ -9,38 +8,43 @@ Environment=RCLONE_CONFIG=%h/.config/rclone/rclone.conf
 Environment=RCLONE_CONFIG_PASS=
 Environment=GOMAXPROCS=2
 TimeoutStopSec=60
-RestartSec=5
 
+ExecStartPre=/usr/bin/sleep 5
 ExecStart=/usr/bin/rclone mount gautrang: %h/media/shared-drives/ \
---filter-from %h/.config/rclone/filter.txt \
+--vfs-cache-mode minimal \
+--vfs-cache-max-size 1000G \
+--vfs-disk-space-total-size 0 \
+--vfs-read-ahead 1G \
+--vfs-fast-fingerprint \
+--vfs-cache-max-age 8760h \
+--vfs-cache-poll-interval 0 \
+--vfs-read-chunk-size 0 \
+--vfs-read-chunk-size-limit off \
+--dir-cache-time 8760h \
+--buffer-size 0 \
+--fast-list \
+--use-mmap \
+--read-only \
+--no-modtime \
+--no-checksum \
+--attr-timeout 1y \
+--poll-interval 0 \
+--tpslimit 10 \
+--tpslimit-burst 3 \
+--bwlimit 0 \
+--onedrive-no-versions \
 --allow-other \
 --allow-non-empty \
 --log-level ERROR \
---log-file %h/.config/rclone/mount.log \
---rc \
---rc-addr 127.0.0.1:5572 \
---rc-no-auth \
+--checkers 4 \
+--transfers 4 \
 --cache-dir %h/.cache/rclone \
---dir-cache-time 1000h \
---vfs-cache-mode full \
---vfs-read-chunk-size 0 \
---buffer-size 0 \
---vfs-fast-fingerprint \
---vfs-read-ahead 1G \
---vfs-cache-max-size 800G \
---vfs-cache-max-age 1000h \
---vfs-disk-space-total-size 0 \
---tpslimit 10 \
---bwlimit 80M:80M \
---vfs-refresh \
---poll-interval 15s \
---use-mmap
+--filter-from %h/.config/rclone/filter.txt \
+--log-file %h/.config/rclone/mount.log
 
-#MOUNTS
 ExecStop=/usr/bin/fusermount3 -uz %h/media/shared-drives/
-ExecStartPre=/usr/bin/sleep 5
-ExecStartPost=/usr/bin/rclone rc vfs/refresh recursive=true --url 127.0.0.1:5572 _async=true
 Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=default.target

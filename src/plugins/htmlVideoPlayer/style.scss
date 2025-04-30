@@ -79,6 +79,23 @@ video[controls]::-webkit-media-controls {
     margin-bottom: 0.5em !important;
 }
 
+.watermark-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: url(assets/img/banner.png) no-repeat;
+    width: 200px;
+    height: 36px;
+    opacity: 0.5;
+    background-size: contain;
+    background-position: center;
+    color: inherit;
+    font-size: inherit;
+    transform: none;
+    pointer-events: none;
+}
+
 @keyframes htmlvideoplayer-zoomin {
     from {
         transform: scale3d(0.2, 0.2, 0.2);

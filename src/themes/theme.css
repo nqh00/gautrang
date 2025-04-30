@@ -720,7 +720,7 @@ html {
 
 .cardOverlayContainer {
     transition: .25s;
-    background: var(--hoverGradientA);
+    background: rgba(255, 255, 255, 0.1);
     background-size: 200%;
     background-position-x: 100%;
 }
@@ -762,7 +762,7 @@ html {
 }
 
 .layout-mobile .cardOverlayButton {
-    padding: .425em;
+    padding: .75em;
 }
 
 .layout-mobile .portraitCard .cardOverlayButton-br,
@@ -1206,20 +1206,29 @@ html {
 }
 
 #divRunningTasks progress {
-    width: 86%;
+    width: calc(100% - 7em);
 }
 
 .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
     backdrop-filter: var(--blurLarge);
-    background-color: rgb(123 123 123 / 30%) !important;
-    box-shadow: inset 0px 0px 0.01em .01em #969696;
+    background-color: rgba(169, 169, 169, 0.3) !important;
+    height: 0.35em;
     overflow: hidden;
     border-radius: var(--largeRadius);
 }
 
 .itemProgressBarForeground {
     border-radius: var(--largeRadius);
-    background-color: var(--uiAccentColor);
+    background-color: var(--dimTextColor);
+}
+
+.layout-mobile .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
+    width: calc(100% - 2.5em);
+}
+
+.layout-mobile .backdropCard .itemProgressBar:not(.backgroundProgress, .playbackProgress, .transcodingProgress) {
+    width: 100%;
+    width: -webkit-fill-available;
 }
 
 .backgroundProgress>div {
@@ -1227,7 +1236,7 @@ html {
 }
 
 .playbackProgress>div {
-    background-color: var(--uiAccentColor);
+    background-color: var(--dimTextColor);
 }
 
 ::-moz-progress-bar {
@@ -1288,6 +1297,10 @@ progress+span {
 
 .mdl-slider::-moz-range-thumb {
     background: var(--uiAccentColor);
+}
+
+.sliderContainer:active .mdl-slider-background-flex {
+    transform: scaleY(1.75);
 }
 
 .sliderMarkerContainer {
@@ -1525,11 +1538,12 @@ progress+span {
 
 .innerCardFooter,
 .chapterThumbTextContainer {
-    background: transparent;
+    background: linear-gradient(0deg, #000000e8, transparent);
     font-weight: 500;
     text-shadow: .1em .1em 0px black;
-    padding: 1em;
+    padding: 5em 2em 1.5em 2em;
     width: auto;
+    width: -webkit-fill-available;
 }
 
 .centerMessage {
@@ -2163,11 +2177,11 @@ div[data-role=controlgroup] a.ui-btn-active {
     background-color: var(--highlightOutlineColor);
 }
 
-[dir=ltr] .padded-left.vertical-wrap {
+[dir=ltr] .padded-left.vertical-wrap:not(div:has(.homeLibraryButton)) {
     padding-left: 5% !important;
 }
 
-[dir=ltr] .padded-right.vertical-wrap {
+[dir=ltr] .padded-right.vertical-wrap:not(div:has(.homeLibraryButton)) {
     padding-right: 5% !important;
 }
 
@@ -2302,7 +2316,6 @@ div[data-role=controlgroup] a.ui-btn-active {
 
 .activeSession {
     width: 98% !important;
-    max-width: 27rem !important;
 }
 
 .emby-tab-button:hover {
@@ -2637,6 +2650,10 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 
 #loginPage .padded-left.padded-right.padded-bottom-page:has(.visualLoginForm:not(.hide)) {
     width: 80em;
+}
+
+#divUsers .squareCard {
+    width: 30% !important;
 }
 
 @media (max-width: 640px) {
