@@ -85,8 +85,8 @@ video[controls]::-webkit-media-controls {
     right: 20px;
     z-index: 1000;
     background: url(assets/img/banner.png) no-repeat;
-    width: 200px;
-    height: 36px;
+    width: calc(20vw);
+    height: calc(3vw);
     opacity: 0.5;
     background-size: contain;
     background-position: center;
