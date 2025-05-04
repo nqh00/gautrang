@@ -82,7 +82,7 @@ export function getPlayedIndicatorHtml(item) {
         }
 
         if (userData.PlayedPercentage && userData.PlayedPercentage >= 100 || (userData.Played)) {
-            return '<div class="playedIndicator indicator"><span class="material-icons indicatorIcon check_circle" aria-hidden="true"></span></div>';
+            return '<div class="playedIndicator indicator"><span class="material-icons indicatorIcon visibility" aria-hidden="true"></span></div>';
         }
     }
 

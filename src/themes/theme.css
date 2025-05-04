@@ -655,7 +655,8 @@ html {
 
 .countIndicator,
 .fullSyncIndicator,
-.mediaSourceIndicator {
+.mediaSourceIndicator,
+.playedIndicator {
     background: rgba(0, 0, 0, .5);
     border: var(--defaultLighterBorder);
 }
@@ -1747,11 +1748,6 @@ div[data-isfolder="true"] .cardText-first+.itemSelectionPanel>.checkboxContainer
 .indicator {
     border: solid rgb(124 124 124 / 50%) var(--borderWidth);
     border-radius: 20%;
-}
-
-.playedIndicator {
-    background: rgb(34, 197, 94);
-    border: var(--defaultLighterBorder);
 }
 
 .videoIndicator {
@@ -2957,6 +2953,11 @@ ul.MuiList-root.MuiMenu-list.MuiList-dense>div:first-child {
 div[data-type="CollectionFolder"][data-path*="Movies"] .cardImageContainer.cardContent {
     background-color: var(--colorOverlayCover) !important;
     background-image: var(--urlMoviesCover) !important;
+}
+
+div[data-type="CollectionFolder"][data-path*="Shows"] .cardImageContainer.cardContent {
+    background-color: var(--colorOverlayCover) !important;
+    background-image: var(--urlTvshowsCover) !important;
 }
 
 div[data-type="CollectionFolder"][data-path*="TV Shows"] .cardImageContainer.cardContent {

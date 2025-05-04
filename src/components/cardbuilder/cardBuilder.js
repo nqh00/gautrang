@@ -1288,7 +1288,7 @@ function updateUserData(card, userData) {
             indicatorsElem = ensureIndicators(card, indicatorsElem);
             indicatorsElem.appendChild(playedIndicator);
         }
-        playedIndicator.innerHTML = '<span class="material-icons indicatorIcon check_circle" aria-hidden="true"></span>';
+        playedIndicator.innerHTML = '<span class="material-icons indicatorIcon visibility" aria-hidden="true"></span>';
     } else {
         playedIndicator = card.querySelector('.playedIndicator');
         if (playedIndicator) {
