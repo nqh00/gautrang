@@ -11,23 +11,22 @@ TimeoutStopSec=60
 
 ExecStartPre=/usr/bin/sleep 5
 ExecStart=/usr/bin/rclone mount gautrang: %h/media/shared-drives/ \
---vfs-cache-mode minimal \
+--vfs-cache-mode full \
 --vfs-cache-max-size 1000G \
 --vfs-disk-space-total-size 0 \
---vfs-read-ahead 1G \
+--vfs-read-ahead 128M \
 --vfs-fast-fingerprint \
 --vfs-cache-max-age 8760h \
---vfs-cache-poll-interval 0 \
---vfs-read-chunk-size 0 \
---vfs-read-chunk-size-limit off \
---dir-cache-time 8760h \
---buffer-size 0 \
+--vfs-cache-poll-interval 1m \
+--vfs-read-chunk-size 64M \
+--vfs-read-chunk-size-limit 1G \
+--dir-cache-time 12h \
+--buffer-size 256M \
 --fast-list \
 --use-mmap \
 --read-only \
 --no-modtime \
 --no-checksum \
---attr-timeout 1y \
 --poll-interval 0 \
 --tpslimit 10 \
 --tpslimit-burst 3 \
@@ -38,7 +37,6 @@ ExecStart=/usr/bin/rclone mount gautrang: %h/media/shared-drives/ \
 --log-level ERROR \
 --checkers 4 \
 --transfers 4 \
---cache-dir %h/.cache/rclone \
 --filter-from %h/.config/rclone/filter.txt \
 --log-file %h/.config/rclone/mount.log
 
