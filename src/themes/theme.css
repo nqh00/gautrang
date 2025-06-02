@@ -2174,11 +2174,11 @@ div[data-role=controlgroup] a.ui-btn-active {
 }
 
 [dir=ltr] .padded-left.vertical-wrap:not(div:has(.homeLibraryButton)) {
-    padding-left: 5% !important;
+    padding-left: 0 !important;
 }
 
 [dir=ltr] .padded-right.vertical-wrap:not(div:has(.homeLibraryButton)) {
-    padding-right: 5% !important;
+    padding-right: 0 !important;
 }
 
 .paging {
